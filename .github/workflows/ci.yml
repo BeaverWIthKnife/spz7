@@ -34,11 +34,11 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: beaverwithknife
-          password: dckr_pat_z-MfNBuV6I8yQw9UsYM4rXnnkFw
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t beaverwithknife/my-python-app .
+        run: docker build -t ${{beaverwithknife}}/my-python-app .
 
       - name: Push Docker image
-        run: docker push beaverwithknife/my-python-app
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/my-python-app
