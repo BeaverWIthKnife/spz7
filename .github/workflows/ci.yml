@@ -1,4 +1,4 @@
-name: CI/CD: Docker push to Docker Hub
+name: "CI/CD: Docker push to Docker Hub"
 
 on:
   push:
