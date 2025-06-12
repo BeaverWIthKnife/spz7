@@ -38,9 +38,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build Docker image
-        run: |
-          USERNAME=$(echo ${{ secrets.DOCKERHUB_USERNAME }} | tr -d '\n\r')
-          docker buildx build --load -t "$USERNAME/my-python-app" .
+        run: docker buildx build --load -t beaverwithknife/my-python-app .
 
       - name: Push Docker image
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/my-python-app
