@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Встановлюємо залежності з requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r tests/requirements.txt
 
 # Команда, яка виконується при запуску контейнера
 CMD ["python", "app/main.py"]
